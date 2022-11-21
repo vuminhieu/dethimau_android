@@ -35,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
     private static final int My_Request_Code = 99;
     DBManager dbManager = new DBManager(this);
 
-
     private  void  mapping() {
         listViewDS = (ListView) findViewById(R.id.lv_danh_sach);
         buttonThem = (Button) findViewById(R.id.btn_them);
