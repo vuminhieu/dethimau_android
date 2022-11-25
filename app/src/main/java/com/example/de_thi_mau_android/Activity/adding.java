@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.de_thi_mau_android.Adapter.CustomAdapter;
 import com.example.de_thi_mau_android.Database.DBManager;
 import com.example.de_thi_mau_android.Model.VeTau;
@@ -17,7 +18,7 @@ import java.util.List;
 
 public class adding extends AppCompatActivity {
     Button buttonSave;
-    EditText editTextGia, editTextGaDi, editTextGaDen,editTextId;
+    EditText editTextGia, editTextGaDi, editTextGaDen, editTextId;
     RadioButton radioButtonMotChieu, radioButtonKhuHoi;
     public static final int My_Result_Code = 33;
     private CustomAdapter customAdapter;
@@ -33,6 +34,7 @@ public class adding extends AppCompatActivity {
         radioButtonMotChieu = (RadioButton) findViewById(R.id.rdo_mot_chieu);
         radioButtonKhuHoi = (RadioButton) findViewById(R.id.rdo_khu_hoi);
     }
+
     private VeTau createStudent() {
         String gadi = editTextGaDi.getText().toString().trim();
         String gaden = editTextGaDen.getText().toString().trim();
@@ -49,9 +51,9 @@ public class adding extends AppCompatActivity {
         if (radioButtonKhuHoi.isChecked()) {
             khuhoi = khuhoi + radioButtonKhuHoi.getText().toString();
         }
-        intent.putExtra("key_khuhoi" , khuhoi);
+        intent.putExtra("key_khuhoi", khuhoi);
         setResult(My_Result_Code, intent);
-        VeTau veTau = new VeTau(gadi, gaden, gia,khuhoi);
+        VeTau veTau = new VeTau(gadi, gaden, gia, khuhoi);
         return veTau;
     }
 
@@ -82,9 +84,6 @@ public class adding extends AppCompatActivity {
         });
 
     }
-
-
-
 
 
 }

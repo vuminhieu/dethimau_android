@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int My_Request_Code = 99;
     DBManager dbManager = new DBManager(this);
 
-    private  void  mapping() {
+    private void mapping() {
         listViewDS = (ListView) findViewById(R.id.lv_danh_sach);
         buttonThem = (Button) findViewById(R.id.btn_them);
     }
@@ -118,25 +118,19 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
             alertDialog.show();
-
-
-
-
         }
-
         return super.onContextItemSelected(item);
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
         if (My_Request_Code == requestCode && resultCode == adding.My_Result_Code) {
             String gadi = data.getStringExtra("key_gadi");
             String gaden = data.getStringExtra("key_gaden");
             String gia = data.getStringExtra("key_gia");
             String khuhoi = data.getStringExtra("key_khuhoi");
-            veTaus.add(new VeTau(gadi,gaden,gia,khuhoi));
+            veTaus.add(new VeTau(gadi, gaden, gia, khuhoi));
             setAdapter();
         }
     }
@@ -156,9 +150,9 @@ public class MainActivity extends AppCompatActivity {
         Button buttonSua = (Button) dialog.findViewById(R.id.btn_update);
         Button buttonHuy = (Button) dialog.findViewById(R.id.btn_huy);
 
-        editTextIDUpdate.setText(veTau.getmID()+ "");
+        editTextIDUpdate.setText(veTau.getmID() + "");
         editTextGaDiUpdate.setText(veTau.getmGaDi() + "");
-        editTextGaDenUpdate.setText(veTau.getmGaDen()+ "");
+        editTextGaDenUpdate.setText(veTau.getmGaDen() + "");
         editTextGiaUpdate.setText(veTau.getmDonGia() + "");
 //        radioButtonMotChieu.setText(veTau.getmKhuHoi() + "");
 //        if ("Một chiều" == radioButtonMotChieu.getText().toString().trim()) {
@@ -190,7 +184,7 @@ public class MainActivity extends AppCompatActivity {
                 if (radioButtonKhuHoi.isChecked()) {
                     khuhoi = khuhoi + radioButtonKhuHoi.getText().toString();
                 }
-                veTau1.setmKhuHoi(khuhoi+ "");
+                veTau1.setmKhuHoi(khuhoi + "");
                 int result = dbManager.updateVeTau(veTau1);
                 if (result > 0) {
                     dbManager.updateVeTau(veTau1);

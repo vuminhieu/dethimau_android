@@ -34,14 +34,13 @@ public class CustomAdapter extends ArrayAdapter<VeTau> {
         ViewHolder viewHolder = new ViewHolder();
 
         if (convertView == null) {
-            convertView = LayoutInflater.from(context).inflate(R.layout.dong_ve_tau, parent,false);
+            convertView = LayoutInflater.from(context).inflate(R.layout.dong_ve_tau, parent, false);
             viewHolder.textViewGaDi = convertView.findViewById(R.id.tv_gia_di);
             viewHolder.textViewGaDen = convertView.findViewById(R.id.tv_gia_den);
             viewHolder.textViewDonGia = convertView.findViewById(R.id.tv_gia);
             viewHolder.textViewKhuHoi = convertView.findViewById(R.id.tv_khu_hoi);
             convertView.setTag(viewHolder);
-        }
-        else {
+        } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
         VeTau veTau = veTauList.get(position);
