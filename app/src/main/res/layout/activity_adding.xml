@@ -3,66 +3,73 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.adding"
+    android:layout_margin="7dp"
     android:orientation="vertical"
-    android:layout_margin="7dp">
+    tools:context=".Activity.adding">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/custom_herder_dialog"
         android:gravity="center"
+        android:padding="12dp"
         android:text="Thêm mới vé tàu"
         android:textColor="@color/black"
         android:textSize="24dp"
-        android:background="@drawable/custom_herder_dialog"
-        android:padding="12dp"
-        android:textStyle="bold"
-        android:layout_marginBottom="20dp"/>
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/edt_id"
-        android:enabled="false"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="ID vé tàu"
-        android:layout_marginBottom="7dp"/>
+        android:layout_marginBottom="7dp"
+        android:enabled="false"
+        android:hint="ID vé tàu" />
+
     <EditText
         android:id="@+id/edt_ga_di"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nhập ga đi"
-        android:layout_marginBottom="7dp"/>
+        android:layout_marginBottom="7dp"
+        android:hint="Nhập ga đi" />
+
     <EditText
         android:id="@+id/edt_ga_den"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nhập ga đến"
-        android:layout_marginBottom="7dp"/>
+        android:layout_marginBottom="7dp"
+        android:hint="Nhập ga đến" />
+
     <EditText
         android:id="@+id/edt_gia"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nhập giá"
-        android:layout_marginBottom="7dp"/>
+        android:layout_marginBottom="7dp"
+        android:hint="Nhập giá" />
+
     <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <RadioButton
                 android:id="@+id/rdo_mot_chieu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Một chiều"
                 android:layout_weight="1"
+                android:text="Một chiều"
                 tools:ignore="InvalidId" />
+
             <RadioButton
                 android:id="@+id/rdo_khu_hoi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Khứ hồi"
                 android:layout_weight="1"
+                android:text="Khứ hồi"
                 tools:ignore="InvalidId" />
 
         </LinearLayout>
@@ -71,22 +78,21 @@
     </RadioGroup>
 
     <LinearLayout
-        android:layout_marginTop="40dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp">
 
         <Button
             android:id="@+id/btn_luu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Lưu"
-            android:background="@drawable/custom_button"
-            android:textStyle="bold"
             android:layout_margin="10dp"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:background="@drawable/custom_button"
+            android:text="Lưu"
+            android:textStyle="bold" />
 
     </LinearLayout>
-
 
 
 </LinearLayout>

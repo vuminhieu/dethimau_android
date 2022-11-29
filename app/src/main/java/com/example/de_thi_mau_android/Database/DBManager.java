@@ -88,7 +88,7 @@ public class DBManager extends SQLiteOpenHelper {
         return db.update(TABLE_NAME, contentValues, where, null);
     }
 
-    public int Delete(int id){
+    public int Delete(int id) {
         SQLiteDatabase db = this.getWritableDatabase();
         String where = ID + " = " + id;
         return db.delete(TABLE_NAME, where, null);
