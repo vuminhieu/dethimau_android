@@ -76,13 +76,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent, My_Request_Code);
             }
         });
-
     }
 
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
-
         super.onCreateContextMenu(menu, v, menuInfo);
     }
 
@@ -167,7 +165,6 @@ public class MainActivity extends AppCompatActivity {
                 dialog.dismiss();
             }
         });
-
 
         buttonSua.setOnClickListener(new View.OnClickListener() {
             @Override

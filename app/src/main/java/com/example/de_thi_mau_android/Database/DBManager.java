@@ -55,6 +55,7 @@ public class DBManager extends SQLiteOpenHelper {
         db.close();
     }
 
+    // get tat ca cac gia tri cua ve tau
     public List<VeTau> getAllVeTau() {
         List<VeTau> veTauList = new ArrayList<>();
         String selectQuery = "SELECT * FROM " + TABLE_NAME;
