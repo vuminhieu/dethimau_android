@@ -6,7 +6,10 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.example.de_thi_mau_android.Activity.MainActivity;
+import com.example.de_thi_mau_android.Adapter.CustomAdapter;
 import com.example.de_thi_mau_android.Model.VeTau;
+import com.example.de_thi_mau_android.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,11 +38,27 @@ public class DBManager extends SQLiteOpenHelper {
             GIA + " TEXT, " +
             KHUHOI + " TEXT)";
 
+    private String SQLQuery1 = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + " (" +
+            ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            GIADI + " TEXT, " +
+            GIADEN + " TEXT, " +
+            GIA + " TEXT, " +
+            KHUHOI + " TEXT)";
+
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(SQLQuery);
     }
-
+    public void them() {
+        SQLiteDatabase db1 = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(GIADI, "Thai Nguyen");
+        values.put(GIADEN, "TPHCM");
+        values.put(GIA, "300000");
+        values.put(KHUHOI,"Co");
+        db1.insert(TABLE_NAME, null, values);
+        db1.close();
+    }
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
     }
@@ -58,6 +77,8 @@ public class DBManager extends SQLiteOpenHelper {
     // get tat ca cac gia tri cua ve tau
     public List<VeTau> getAllVeTau() {
         List<VeTau> veTauList = new ArrayList<>();
+        String abc = "INSERT INTO vetaus VALUES (null, '" + "Thai Nguyen" + "', '" + "Thai Binh" + "', '" + "300000" + "', '" + "abc" + "')";
+
         String selectQuery = "SELECT * FROM " + TABLE_NAME;
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
